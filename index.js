@@ -7,12 +7,13 @@ console.log("Hello " + userName + "!")
 console.log("How well do you know about Marvel? Let's check it")
 console.log("*******************")
 console.log("INSTRUCTION")
-console.log("All answers in small letter and only in chars")
+console.log("there are 4 options each and you just have to choose the correct one")
 console.log("for every right answer you get +1 and else you get -1")
 console.log("*******************")
 
-function play(question, answer){
-var userAnswer = readlineSync.question(question)
+function play(question, answer,option){
+  console.log(question)
+var userAnswer = readlineSync.question(option)
 
 if (userAnswer === answer){
   console.log("Right");
@@ -27,26 +28,31 @@ console.log("Your score is: ", score);
 
 var questions = [{
   question: "What was the first Marvel movie? ",
-  answer: "iron man"
+  option:"a. iron man b.the hulk c.captain america d.thor  ",
+  answer: "a"
 },{
   question: "How many avengers films are there? ",
-answer: "four"
+    option:"a.three b.eight c.four d.nine   ",
+answer: "c"
 
 },{
   question: "Who plays Iron Man? ",
-  answer: "robert downey jr."
+    option:"a.robert downey jr. b.chris evans c.amitabh bachhan d.salman khan   ",
+  answer: "a"
 },
  {
  question:"What is Phase 4 of Marvel called?",
-    answer:"the multiverse saga"
+   option:"a.infinity saga b.mutliverse saga c.armor wars d.untitled eternals sequel   ",
+    answer:"b"
  },
 {
   question:"How many stones does Thanos have",
-  answer:"six"
+    option:"a.two b.nine c.ten d.six   ",
+  answer:"d"
 }
                 ];
 
 for (var i=0; i<questions.length; i++){
 var currentQuestion = questions[i];
-play(currentQuestion.question, currentQuestion.answer)
+play(currentQuestion.question, currentQuestion.answer,currentQuestion.option)
 }
